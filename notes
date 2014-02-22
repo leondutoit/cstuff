@@ -1,0 +1,101 @@
+
+printf
+
+escape codes
+
+\n newline
+\t tab
+\v vertical tab
+\f new page
+\b backspace
+\r carriage return
+
+format sequences %
+
+i, d int
+c, char
+f, e, E, g, G floating points and scientific
+h short int, unsigned short int
+l long int, unsigned long int
+l wide string
+L long double
+s string
+
+valgrind
+
+valgrind --track-origins=yes ./ex4
+
+conditional jump or move depends on uninitialised value
+
+
+in char - difference betweeen single and double quotes
+
+string is an array of chars
+
+0 - falsy
+>0 - thruthy
+
+
+in <ctype.h> stdblib:
+
+isalnum, isalpha, isascii, isblank, iscntrl, isdigit, isgraph, islower, isprint, ispunct, isspace, isupper, isxdigit - character classification routines
+
+
+""" Something to ponder...
+The purpose of a pointer is to let you manually index into blocks or memory when an array won't do it right. In almost all other cases you actually want to use an array.
+"""
+
+type *ptr
+*ptr
+*(ptr + i)
+&thing - address
+type *ptr = &thing
+ptr++
+
+memcpy
+- copies char values (btyes) from one contiguous piece of memory to another
+- can copy anything as long as you know the address
+
+value and reference semantics
+- value: copies; memcpy
+- reference: same thingl use pointers
+
+pointers are just addresses in memory
+
+array[i] == *(array+i) // a pointer to the address
+array length not stored anywhere
+all you have is a pointer to the start of the contiguous block of memory
+and that block contains the same type of things
+
+malloc(sizeof(Thing)) return a generic pointer to mem
+
+'owners' of pointers
+
+C preprocessor
+- responds to # directives (used to tranform code)
+- directives
+    #include
+        - only header files which contain declarations to definitions
+        - include the header file in the one that contains the actual definitions
+    #define
+        - macros (only textual replacement no parsing)
+    #if, #else, #elif, #endif
+        - 'conditional compilation' based on some predicate
+
+
+strace
+------
+strace -s 2000 -f ./program
+strace -T ./program (timing/profiling)
+lsof # to check file descriptors
+
+
+
+
+
+
+
+
+
+
+
