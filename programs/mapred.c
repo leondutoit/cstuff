@@ -32,7 +32,7 @@ struct List *map(func_one func, struct List *list) {
     int i = 0;
     int length = list->length;
     for (i = 0; i < length; i++) {
-        list->elements[i] = square(list->elements[i]);
+        list->elements[i] = func(list->elements[i]);
     }
     return list;
 }
@@ -42,7 +42,7 @@ int reduce(func_two func, struct List *list) {
     int i = 0;
     int length = list->length;
     for (i = 0; i < length - 1; i++) {
-        cumul += sum(list->elements[i], list->elements[i + 1]);
+        cumul += func(list->elements[i], list->elements[i + 1]);
     }
     printf("%d\n", cumul);
     return cumul;
