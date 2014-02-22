@@ -89,9 +89,9 @@ strace -s 2000 -f ./program
 strace -T ./program (timing/profiling)
 lsof # to check file descriptors
 
-
-
-
+check how many cores you have:
+mac: sysctl hw.logicalcpu
+nix: grep cores /proc/cpuinfo
 
 
 

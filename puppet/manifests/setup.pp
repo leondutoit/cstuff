@@ -10,19 +10,15 @@ class cstuff {
     creates => '/usr/bin/updatedonce',
   }
 
-# perhaps package?? check availability
-#exec {'valgrind':
- # command => 'apt-get -y install valgrind',
-  #require => Exec['runupdate'],
-  #}
-
-  package{'valgrind':
+  package {'valgrind':
     ensure  => installed,
     require => Exec['runupdate'],
   }
 
+  package {'make':
+    ensure => installed,
+  }
+
 }
 
-
 include cstuff
-
