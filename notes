@@ -72,6 +72,7 @@ malloc(sizeof(Thing)) return a generic pointer to mem
 'owners' of pointers
 
 C preprocessor
+--------------
 - responds to # directives (used to tranform code)
 - directives
     #include
@@ -81,7 +82,7 @@ C preprocessor
         - macros (only textual replacement no parsing)
     #if, #else, #elif, #endif
         - 'conditional compilation' based on some predicate
-
+- $ cpp mapred.c | less
 
 strace
 ------
@@ -93,6 +94,23 @@ check how many cores you have:
 mac: sysctl hw.logicalcpu
 nix: grep cores /proc/cpuinfo
 
+dynamic mem allocation
+----------------------
+- malloc (general)
+- obstacks (more efficient and convenient for stacklike allocation)
+    - a pool of memory containing a stack of objects
+- alloca (vlocks allocated dynamically, freed automatically)
+    - could be difficult to debug if error occurs
+    - less portable than malloc
+
+- static, allocated once and never freed
+- automatic, allocated when compund statement (e.g function) is entered and freed when exited
+- dynamic, not supported by C variables
+- can only refer to dynamically allocated space with a pointer
+- realloc (change size of malloc'ed block)
+
+aside:
+http://www.catb.org/esr/structure-packing/
 
 
 
