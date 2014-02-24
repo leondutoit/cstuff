@@ -16,7 +16,7 @@ i, d int
 c, char
 f, e, E, g, G floating points and scientific
 h short int, unsigned short int
-l long int, unsigned long int
+ld long int, unsigned long int
 l wide string
 L long double
 s string

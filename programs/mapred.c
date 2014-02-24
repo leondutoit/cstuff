@@ -38,19 +38,21 @@ struct List *map(func_one func, struct List *list) {
 }
 
 int reduce(func_two func, struct List *list) {
-    int cumul = 0;
+    int temp = 0;
+    int ans = 0;
     int i = 0;
     int length = list->length;
-    for (i = 0; i < length - 1; i++) {
-        cumul += func(list->elements[i], list->elements[i + 1]);
+    for (i = 0; i < length; i++) {
+        temp = func(ans, list->elements[i]);
+        ans = temp;
     }
-    printf("%d\n", cumul);
-    return cumul;
+    printf("%d\n", ans);
+    return ans;
 }
 
 int main(int argc, char *argv[]) {
 
-    int some_nums[] = {3,4,5,1};
+    int some_nums[] = {3,3,2,1};
     int count = sizeof(some_nums) / sizeof(int);
     struct List list;
     init_list(&list, some_nums, count);
