@@ -49,5 +49,8 @@ int main(int argc, char *argv[]) {
     change_me_for_real(&leon);
     printf("having been changed for real now leon.x is: %d\n", leon.x);
 
+    change_me_for_real_2(leon);
+    printf("is leon.x different???: %d\n", leon.x);
+
     return 0;
 }

@@ -83,6 +83,7 @@ C preprocessor
     #if, #else, #elif, #endif
         - 'conditional compilation' based on some predicate
 - $ cpp mapred.c | less
+- used as a code generator for templated pieces
 
 strace
 ------
@@ -111,8 +112,20 @@ dynamic mem allocation
 
 aside:
 http://www.catb.org/esr/structure-packing/
+Scheme and C play well together... hmmm... juicy combo
+gambit and chicken Scheme with good FFI to C
+http://snow.iro.umontreal.ca/
+https://github.com/alvatar/sphere-sdl2
+http://blog.fourthbit.com/2013/06/07/using-match-and-comprehensions-in-scheme/
+http://www.schemespheres.org/
 
+autotools
+---------
+http://blog.fourthbit.com/2013/06/18/creating-an-open-source-program-in-c-with-autotools-part-1-of-2/
 
+rand
+srand
+getchar
 
 
 

@@ -9,7 +9,7 @@ Vagrant::Config.run do |config|
     config.vm.box_url = "http://files.vagrantup.com/precise64.box"
 
     # Port forwarding
-    #config.vm.forward_port 80, 8080
+    config.vm.forward_port 90, 9090
 
     #config.vm.share_folder "puppet_mount", "/puppet", "puppet"
 
