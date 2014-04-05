@@ -9,7 +9,7 @@ int Monster_attack(void *self, int damage) {
     Monster *monster = self;
     printf("You attack%s!\n", monster->_(description)); // _(...) = proto.description
     monster->hit_points -= damage;
-    if (moster->hit_points > 0) {
+    if (monster->hit_points > 0) {
         printf("It is still alive\n");
         return 0;
     } else {
@@ -62,7 +62,7 @@ int Room_attack(void *self, int damage) {
     Monster *monster = room->bad_guy;
 
     if (monster) {
-        montser->_(attack)(monster, damage);
+        monster->_(attack)(monster, damage);
         return 1;
     } else {
         printf("You flail and do nothing.\n");
@@ -70,9 +70,9 @@ int Room_attack(void *self, int damage) {
     }
 }
 
-Object RoomProto {
+Object RoomProto = {
     .move = Room_move,
-    .attack = Room_attack;
+    .attack = Room_attack
 };
 
 void *Map_move(void *self, Direction direction) {
@@ -90,7 +90,7 @@ void *Map_move(void *self, Direction direction) {
 
 int Map_attack(void *self, int damage) {
     Map *map = self;
-    Room location = map->location;
+    Room *location = map->location;
     return location->_(attack)(location, damage);
 }
 
@@ -124,7 +124,7 @@ int Map_init(void *self) {
 Object MapProto = {
     .init = Map_init,
     .move = Map_move,
-    .attack = Map_attack;
+    .attack = Map_attack
 };
 
 int process_input(Map *game) {

@@ -128,5 +128,15 @@ srand
 getchar
 
 
+http://danluu.com/edit-binary/
+------------------------------
+lldb
+hexfriend
 
+Embed JS in C
+-------------
+http://duktape.org/index.html
 
+Valgrind and gdb
+----------------
+http://billiob.net/blog//20140330_vgdb.html

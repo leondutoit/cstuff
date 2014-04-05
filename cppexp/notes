@@ -49,3 +49,7 @@ http {
 also change /etc/nginx/sites-enabled/default to port 90
 restart
 then curl after spawning
+
+
+see PCRE for regex in C - route handling
+http://uriparser.sourceforge.net/ maybe

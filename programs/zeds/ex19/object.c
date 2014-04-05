@@ -10,7 +10,7 @@ void Object_destroy(void *self) {
     Object *obj = self;
     if (obj) {
         if (obj->description) free(obj->description);
-        free(object);
+        free(obj);
     }
 }
 

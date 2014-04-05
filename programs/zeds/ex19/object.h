@@ -3,12 +3,12 @@
 #ifndef _object_h // "if not defined"
 #define _object_h
 
-typdef enum {
+typedef enum {
     NORTH, SOUTH, EAST, WEST
 } Direction;
 
 // a struct with function pointers and such and such
-typdef struct {
+typedef struct {
     char *description;
     int (*init)(void *self);
     void (*destroy)(void *self);
