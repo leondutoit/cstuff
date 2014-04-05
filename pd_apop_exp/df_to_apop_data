@@ -1,0 +1,10 @@
+
+a hack that may work
+--------------------
+df -> sqlite -> apop_data -> estimate -> sqlite -> df
+
+https://docs.python.org/2/library/sqlite3.html
+http://apophenia.info/gentle.html#apop_data
+
+
+
