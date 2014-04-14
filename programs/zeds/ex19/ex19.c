@@ -4,8 +4,10 @@
 #include <string.h>
 #include <time.h>
 #include "ex19.h"
+#include <assert.h>
 
 int Monster_attack(void *self, int damage) {
+    assert(damage >= 0);
     Monster *monster = self;
     printf("You attack%s!\n", monster->_(description)); // _(...) = proto.description
     monster->hit_points -= damage;
@@ -30,6 +32,7 @@ Object MonsterProto = {
 };
 
 void *Room_move(void *self, Direction direction) {
+    assert(sizeof(direction) > 0);
     Room *room = self;
     Room *next = NULL;
 
@@ -58,6 +61,7 @@ void *Room_move(void *self, Direction direction) {
 }
 
 int Room_attack(void *self, int damage) {
+    assert(damage >= 0);
     Room *room = self;
     Monster *monster = room->bad_guy;
 
@@ -76,6 +80,7 @@ Object RoomProto = {
 };
 
 void *Map_move(void *self, Direction direction) {
+    assert(sizeof(direction) > 0);
     Map *map = self;
     Room *location = map->location;
     Room *next = NULL;
@@ -89,6 +94,7 @@ void *Map_move(void *self, Direction direction) {
 }
 
 int Map_attack(void *self, int damage) {
+    assert(damage >= 0);
     Map *map = self;
     Room *location = map->location;
     return location->_(attack)(location, damage);
@@ -128,6 +134,7 @@ Object MapProto = {
 };
 
 int process_input(Map *game) {
+    assert(game != NULL);
     printf("\n> ");
 
     char ch = getchar();
@@ -163,11 +170,17 @@ int process_input(Map *game) {
 
         case 'l':
         printf("You can go:\n");
-            if (game->location->north) printf("NORTH\n");
-            if (game->location->south) printf("SOUTH\n");
-            if (game->location->south) printf("EAST\n");
-            if (game->location->west) printf("WEST\n");
-            break;
+            if (game->location->north) {
+                printf("NORTH\n");
+            } else if (game->location->south) {
+                printf("SOUTH\n");
+            } else if (game->location->south) {
+                printf("EAST\n");
+            } else if (game->location->west) {
+                printf("WEST\n");
+            } else {
+                break;
+            }
 
         default:
             printf("What?: %d\n", ch);
@@ -190,4 +203,3 @@ int main(int argc, char *argv[]) {
 
     return 0;
 }
-

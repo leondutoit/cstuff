@@ -6,5 +6,35 @@ df -> sqlite -> apop_data -> estimate -> sqlite -> df
 https://docs.python.org/2/library/sqlite3.html
 http://apophenia.info/gentle.html#apop_data
 
+maybe alter the db pointer in
+https://github.com/b-k/Apophenia/blob/master/apop_db_sqlite.c
+to the address of the db already fired up in python mem???
+
+instead of:
+int status = sqlite3_open(filename ? filename : ":memory:", &db);
+use already opened &db
+therefore pass address from python process
+
+db open called in:
+https://github.com/b-k/Apophenia/blob/master/apop_db.m4.c
+
+https://www.sqlite.org/c3ref/open.html
+
+alternatively (less eloquent and maybe for a start)
+---------------------------------------------------
+write to a temp file...
+will be slower...
+
+more outlandish
+---------------
+http://zeromq.github.io/pyzmq/serialization.html
+http://docs.scipy.org/doc/numpy/reference/c-api.html
+
+
+or...JSON
+---------
+df->JSON->text->apop
+https://github.com/akheron/jansson
+https://github.com/json-c/json-c
 
 
