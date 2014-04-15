@@ -164,3 +164,9 @@ calloc
 #ifndef - if (the following definition) not (already) defined
 #define - making constants
 #endif
+
+fprintf
+stderr - global
+errno=0 // clear errno
+CPP recursively expands macros
+strerror
