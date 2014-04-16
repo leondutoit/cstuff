@@ -152,21 +152,155 @@ http://frama-c.com/what_is.html
 
 
 assert(pointer != NULL);
-size_t - unsigned integer of at least 16 bits
+size_t - unsigned integer used to represent sizes of objects (of at least 16 bits) the result of a sizeof() operations is of type size_t
 
-strdup
-getchar
-rand
-srand
+strdup - returns pointer to new duplicated string, memory allocated with malloc
+getchar - reads next character from stdin stream, returns it as an unsigned char cast to an int or EOF
+rand - generate pseudo-random bytes (openssl tool)
+srand - sets argument as seed for new one - repeatable seq
 time
-calloc
+calloc - initialises memory to 0 (malloc does not)
 
 #ifndef - if (the following definition) not (already) defined
 #define - making constants
 #endif
 
-fprintf
+fprintf - writes to stream (e.g. stderr)
 stderr - global
 errno=0 // clear errno
 CPP recursively expands macros
-strerror
+strerror - describes the error code
+
+
+data types
+----------
+int, default 32 bytes
+double
+float - smaller than double
+char - 1 byte
+void - no type
+enum - enumerated, works like ints
+
+type modifiers
+--------------
+unsigned - only > 0, so larger upper bound
+signed - havles the upper bound
+long - more storage
+short - yeah, not long
+
+type qualifiers
+---------------
+const - variable won't change after initialisation
+volatile - tell the compiler not to optimise this
+register - forces variable to be in the register (don't try to be smart)
+
+type conversion
+---------------
+long double
+double
+float
+int (only char and short int)
+long
+C promotes the smaller operand to match the larger operand
+rather cast explicitly to be sure, e.g.
+long + char - int * double
+(double)long + (double)char - (double)int * double
+AND always promote UP
+
+type sizes
+----------
+stdint.h
+(u)int(bits)_t, bits (8, 16, 32, 64, 128)
+macros that return the max value of types:
+(u)int_least(N)_t
+(U)INT_LEAST(N)_MAX - max val of matching least(N) type
+..._MIN
+(u)int_fast(N)_t - fastest with given precision
+...MAX
+...MIN
+(u)intptr_t - large enough to hold a pointer
+...MAX
+...MIN
+(u)intmax_t - biggest possible on system
+...MAX
+...MIN
+PTRDIFF_<MIN, MAX>
+SIZE_MAX - max of size_t
+
+operators
+---------
+binary: x+y
+unary: -x
+prefix: ++x
+postfix: x++
+ternary: x?y:z
+
+data operators
+--------------
+-> struct pointer access
+. struct value access
+[] index
+sizeof
+& address
+* value
+
+logic
+-----
+!=, ==, <=, >=, <, >
+
+bit
+---
+& bitwise and
+<< shift left
+>> shift right
+^ xor
+| or
+~ compliment (flips all bits)
+
+boolean
+-------
+!, &&, ||, ?:
+
+assignment
+----------
+=
+%= modulus assign
+&= bitwise and assign
+*= multiply assign
++=
+-=
+/=
+<<= shift left assign
+>>= shift right assign
+^= xor assign
+|= or assign
+
+control
+-------
+do { ... } while(x == TRUE) - does at least once and then checks
+break
+continue - jumps to test
+goto label:
+
+
+mem
+---
+malloc - from the heap (what is left)
+stack - stores func vars
+gotchas - doing malloc on stack then pointer is on the stack - might get lost
+stack overflow (use heap instead)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
