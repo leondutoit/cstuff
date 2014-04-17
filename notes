@@ -290,8 +290,29 @@ stack - stores func vars
 gotchas - doing malloc on stack then pointer is on the stack - might get lost
 stack overflow (use heap instead)
 
+memset - fill memory with a constant byte; returns pointer
+memcpy - copy mem from one area to another (may not overlap); returns pointer
+memmove - copy from one to another (may overlap)
 
+IO
+--
+note
+avoid gets and scanf
 
+fscanf - (scanf family of funcs - scans input according to format); format with conversion specs; fscabf reads reads from FILE
+fgets - reads in at most one less than size characters from stream and stores to buffer
+fopen - (returns file pointer) takes path and mode
+freopen - (returns file pointer) opens file and associates a stream with it
+fdopen - (returns file pointer) associates stream with existing file descriptor
+fclose - closes file, flushes stream, closes underlying file descriptor
+fcloseall - close all open streams, buffered output written, input discarded
+fgetpos - interface to ftell
+fseek - sets file position indicator
+ftell - obtain current position of file position indicator
+rewind - sets file position indicator to beginning
+fprintf - write output to given stream
+fwrite - writes elements of data to stream, binary IO
+fread - reads elem..., binary IO
 
 
 
