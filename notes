@@ -277,7 +277,7 @@ assignment
 
 control
 -------
-do { ... } while(x == TRUE) - does at least once and then checks
+do { ... } while (x == TRUE) - does at least once and then checks
 break
 continue - jumps to test
 goto label:
@@ -314,7 +314,9 @@ fprintf - write output to given stream
 fwrite - writes elements of data to stream, binary IO
 fread - reads elem..., binary IO
 
-
+hash functions
+--------------
+https://gist.github.com/badboy/6267743
 
 
 
