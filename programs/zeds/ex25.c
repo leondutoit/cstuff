@@ -40,7 +40,7 @@ int read_scan(const char *fmt, ...) {
     int rc = 0;
     int *out_int = NULL;
     char *out_char = NULL;
-    char ** out_string = NULL;
+    char **out_string = NULL;
     int max_buffer = 0;
 
     va_list argp; // using va_list data structure
