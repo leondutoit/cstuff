@@ -319,7 +319,16 @@ hash functions
 https://gist.github.com/badboy/6267743
 
 
+"""
+In libraries however, I try my hardest to never abort. The software using my library can decide if it should abort, and typically I'll only abort if the library is very badly used.
+"""
 
+.a - statically linked, static libraries
+        - if used in executable, embedded into binary
+.so - dynamically linked, dynamic libraries
+        - if used, only referenced by executable (code dependency added at runtime)
+
+.o - object file (compiled source) "object files typically contain native code, linker information, debugging symbols and so forth." Output of the compiler (linker uses them to form the executable)
 
 
 
