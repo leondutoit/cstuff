@@ -2,9 +2,12 @@ CFLAGS=-g -O2 -Wall -Wextra -Isrc -rdynamic -DNDEBUG $(OPTFLAGS)
 LIBS=-ldl $(OPTLIBS)
 PREFIX?=/usr/local
 
+# searches for all .c files under src and dynamically creates variable
 SOURCES=$(wildcard src/**/*.c src/*.c)
+# use the list above to make a list of object files
 OBJECTS=$(patsubst %.c,%.o,$(SOURCES))
 
+# finding test files
 TEST_SRC=$(wildcard tests/*_tests.c)
 TESTS=$(patsubst %.c,%,$(TEST_SRC))
 

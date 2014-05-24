@@ -318,6 +318,8 @@ hash functions
 --------------
 https://gist.github.com/badboy/6267743
 
+LIBS
+----
 
 """
 In libraries however, I try my hardest to never abort. The software using my library can decide if it should abort, and typically I'll only abort if the library is very badly used.
@@ -325,10 +327,21 @@ In libraries however, I try my hardest to never abort. The software using my lib
 
 .a - statically linked, static libraries
         - if used in executable, embedded into binary
+
+.o - object file (compiled source) "object files typically contain native code, linker information, debugging symbols and so forth." Output of the compiler (linker uses them to form the executable)
+
 .so - dynamically linked, dynamic libraries
         - if used, only referenced by executable (code dependency added at runtime)
 
-.o - object file (compiled source) "object files typically contain native code, linker information, debugging symbols and so forth." Output of the compiler (linker uses them to form the executable)
+More on libs and linking
+------------------------
+- getting additional features into your executable
+
+- static: .a -> container for a set of .o files (objects and their functions) can treat it like one big .o file. Nice for small and medium projects - put in everything you can.
+
+- dynamic: .so, .dll, .dylib, .byndle, .framework and so on (built and placed in common location - when running your exec the OS dynamically loads them and links them to your program oooontheeeflyyyy) Nice for larger systems - load all of the common functionality once
+
+
 
 
 
