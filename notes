@@ -341,6 +341,10 @@ More on libs and linking
 
 - dynamic: .so, .dll, .dylib, .byndle, .framework and so on (built and placed in common location - when running your exec the OS dynamically loads them and links them to your program oooontheeeflyyyy) Nice for larger systems - load all of the common functionality once
 
+dl* - api to dynamic linker loader
+
+
+units testing: http://www.jera.com/techinfo/jtns/jtn002.html
 
 
 
