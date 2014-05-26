@@ -1,6 +1,6 @@
 #OPTLIBS=build/libex29.so
 CFLAGS=-g -O2 -Wall -Wextra -Isrc -rdynamic -DNDEBUG $(OPTFLAGS)
-LIBS=-ldl $(OPTLIBS)
+LDLIBS=-ldl $(OPTLIBS)
 PREFIX?=/usr/local
 
 # searches for all .c files under src and dynamically creates variable
@@ -35,9 +35,10 @@ build:
 
 # The Unit Tests
 .PHONY: tests
-tests: CFLAGS += $(TARGET)
+
 tests: $(TESTS)
 	sh ./tests/runtests.sh
+#tests: LDLIBS += $(LIBS)
 
 valgrind:
 	VALGRIND="valgrind --log-file=/tmp/valgrind-%p.log" $(MAKE)
