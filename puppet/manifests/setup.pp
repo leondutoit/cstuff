@@ -10,7 +10,7 @@ class cstuff {
     creates => '/usr/bin/updatedonce',
   }
 
-  package {'valgrind':
+  package {['valgrind', 'gdb']:
     ensure  => installed,
     require => Exec['runupdate'],
   }

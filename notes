@@ -237,8 +237,8 @@ ternary: x?y:z
 
 data operators
 --------------
--> struct pointer access
-. struct value access
+-> struct pointer access (when dealing with a pointer to a struct and you want member access)
+. struct value access (when dealing with a struct and you want memeber access)
 [] index
 sizeof
 & address
@@ -345,6 +345,33 @@ dl* - api to dynamic linker loader
 
 
 units testing: http://www.jera.com/techinfo/jtns/jtn002.html
+
+math funcs
+----------
+http://www.netlib.org/cephes/
+
+
+USEFUL resources (nginx module development)
+-------------------------------------------
+http://www.evanmiller.org/
+
+debugging
+---------
+print, macros, valgrind, gdb
+
+DSs & ALGOS
+-----------
+double linked list
+- each node holds a pointer to the next and previous node
+- keep track of first and last element
+- insert and delete efficient
+- traversal not efficient (have to process all pointers along the way)
+
+aside: void pointer can point to any type (not bound to an int, e.g.)
+
+
+
+
 
 
 
