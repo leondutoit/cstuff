@@ -1,6 +1,6 @@
-#OPTLIBS=build/liblcthw.so
+OPTLIBS=build/liblcthw.so
 CFLAGS=-g -O2 -Wall -Wextra -Isrc -rdynamic -DNDEBUG $(OPTFLAGS)
-LDLIBS=-ldl $(OPTLIBS)
+LIBS=$(OPTLIBS)
 PREFIX?=/usr/local
 
 # searches for all .c files under src and dynamically creates variable
@@ -8,7 +8,7 @@ SOURCES=$(wildcard src/**/*.c src/*.c)
 # use the list above to make a list of object files
 OBJECTS=$(patsubst %.c,%.o,$(SOURCES))
 
-# finding test files
+# finding test Files
 TEST_SRC=$(wildcard tests/*_tests.c)
 TESTS=$(patsubst %.c,%,$(TEST_SRC))
 
@@ -38,7 +38,7 @@ build:
 
 tests: $(TESTS)
 	sh ./tests/runtests.sh
-#tests: LDLIBS += $(LIBS)
+tests: LDLIBS += $(LIBS)
 
 valgrind:
 	VALGRIND="valgrind --log-file=/tmp/valgrind-%p.log" $(MAKE)

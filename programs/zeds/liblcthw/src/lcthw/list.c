@@ -1,6 +1,6 @@
 
-#include "list.h"
-#include "dbg.h"
+#include <lcthw/list.h>
+#include <lcthw/dbg.h>
 
 List *List_create() {
     return calloc(1, sizeof(List));
