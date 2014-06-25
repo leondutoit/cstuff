@@ -366,15 +366,20 @@ double linked list
 - keep track of first and last element
 - insert and delete efficient
 - traversal not efficient (have to process all pointers along the way)
+- discussion:
+    - http://stackoverflow.com/questions/15563043/when-is-doubly-linked-list-more-efficient-than-singly-linked-list
 
-aside: void pointer can point to any type (not bound to an int, e.g.)
+aside:
+void pointer can point to any type (not bound to an int, e.g.)
+
+`inline` compiler hint - an attempt to embed the function content into the calling code, instead of calling the function itself (replace the function call with the code it should execute)
+
+`translation unit` - ultimate input to compiler from which an object file is produced - normally a source file with header files included and macros expanded, conditional ifdefs, (after the cpp is done with it), the cpp is doing lexical processing and cannot do anything specific to C syntax. This obviously means that the source code is not the same as what the compiler sees.
 
 
+LUA scientific computing: http://torch.ch/?repost=1
 
-
-
-
-
+#include "something" - will first look in current directory for the "something"
 
 
 
