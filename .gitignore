@@ -43,3 +43,5 @@ ex22_main
 ex31
 list_tests
 list_algos_test
+darray_tests
+list_algos_tests

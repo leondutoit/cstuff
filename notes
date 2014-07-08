@@ -359,17 +359,8 @@ debugging
 ---------
 print, macros, valgrind, gdb
 
-DSs & ALGOS
------------
-double linked list
-- each node holds a pointer to the next and previous node
-- keep track of first and last element
-- insert and delete efficient
-- traversal not efficient (have to process all pointers along the way)
-- discussion:
-    - http://stackoverflow.com/questions/15563043/when-is-doubly-linked-list-more-efficient-than-singly-linked-list
-
 aside:
+------
 void pointer can point to any type (not bound to an int, e.g.)
 
 `inline` compiler hint - an attempt to embed the function content into the calling code, instead of calling the function itself (replace the function call with the code it should execute)
@@ -380,6 +371,41 @@ void pointer can point to any type (not bound to an int, e.g.)
 LUA scientific computing: http://torch.ch/?repost=1
 
 #include "something" - will first look in current directory for the "something"
+
+http://blog.noctua-software.com/cpp-patterns-using-plain-c.html
+
+standards
+---------
+(ANSI) C89
+- first standard
+
+C99
+- mostly backward compatible, but stricter
+- inline funcs
+- long long int, boolean type, complex (new data types)
+- variable-length arrays
+- new headers,
+    - such as <stdbool.h>, <complex.h>, <tgmath.h>, and <inttypes.h>
+
+C11
+- current standard
+-  <threads.h>
+- improved unicode support
+- deprecate gets
+- anonymous structs and unions
+
+
+DSs & ALGOS
+-----------
+double linked list
+- each node holds a pointer to the next and previous node
+- keep track of first and last element
+- insert and delete efficient
+- traversal not efficient (have to process all pointers along the way)
+- discussion:
+    - http://stackoverflow.com/questions/15563043/when-is-doubly-linked-list-more-efficient-than-singly-linked-list
+
+
 
 
 
