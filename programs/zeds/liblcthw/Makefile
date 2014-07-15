@@ -1,4 +1,4 @@
-OPTLIBS=build/liblcthw.a
+OPTLIBS=build/liblcthw.a -lbsd
 CFLAGS=-g -O2 -Wall -Wextra -Isrc -rdynamic -DNDEBUG $(OPTFLAGS)
 LIBS=$(OPTLIBS)
 PREFIX?=/usr/local
