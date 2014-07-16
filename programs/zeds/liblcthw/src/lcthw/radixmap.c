@@ -1,5 +1,5 @@
 
-// Least signigicant digit implementation
+// Least significant digit implementation
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -38,6 +38,7 @@ void RadixMap_destroy(RadixMap *map) {
 
 static inline void radix_sort(short offset, uint64_t max, uint64_t *source, uint64_t *dest) {
     // setup
+    // 256 (32 bit = 256 bytes) buckets for distribution of digit occurrences
     uint64_t count[256] = {0};
     uint64_t *cp = NULL;
     uint64_t *sp = NULL;
@@ -76,6 +77,8 @@ void RadixMap_sort(RadixMap *map) {
 }
 
 RMElement *RadixMap_find(RadixMap *map, uint32_t to_find) {
+    // binary search
+    // relies on the radixmap being sorted
     int low = 0;
     int high = map->end - 1;
     RMElement *data = map->contents;
