@@ -46,3 +46,4 @@ list_algos_test
 darray_tests
 list_algos_tests
 darray_algos_tests
+radixmap_tests
