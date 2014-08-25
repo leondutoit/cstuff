@@ -405,9 +405,13 @@ double linked list
 - discussion:
     - http://stackoverflow.com/questions/15563043/when-is-doubly-linked-list-more-efficient-than-singly-linked-list
 
+typedef union
+    - a union is a value that may have any of several representations or formats
+    - same memory block can be represented/treated as different types e.g int or float
 
 
-
+reference:
+http://www.eskimo.com/~scs/cclass/
 
 
 
