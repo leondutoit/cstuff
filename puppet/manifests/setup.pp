@@ -10,7 +10,7 @@ class cstuff {
     creates => '/usr/bin/updatedonce',
   }
 
-  package {['valgrind', 'gdb']:
+  package {['valgrind', 'gdb', 'libbsd-dev']:
     ensure  => installed,
     require => Exec['runupdate'],
   }
