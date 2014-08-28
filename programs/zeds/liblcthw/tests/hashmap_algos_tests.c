@@ -111,7 +111,7 @@ char *test_distribution() {
 
     for (i = 0; i < BUKCETS; i++) {
         fprintf(stderr, "%d\t%d\t%d\n",
-            stats[ALGO_FVN1A], stats[ALGO_ADLER32], stats[ALGO_DJB]);
+            stats[ALGO_FVN1A][i], stats[ALGO_ADLER32][i], stats[ALGO_DJB][i]);
     }
 
     destroy_keys(keys);
