@@ -414,4 +414,14 @@ reference:
 http://www.eskimo.com/~scs/cclass/
 
 
+hash tables lib
+---------------
+http://troydhanson.github.io/uthash/
 
+ssize_t
+-------
+http://stackoverflow.com/questions/19224655/using-ssize-t-vs-int
+
+packet sniffing
+---------------
+http://www.tcpdump.org/pcap.htm

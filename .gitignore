@@ -50,3 +50,4 @@ radixmap_tests
 *.zip
 hashmap_algos_tests
 hashmap_tests
+string_algos_tests
