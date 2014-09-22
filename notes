@@ -425,3 +425,32 @@ http://stackoverflow.com/questions/19224655/using-ssize-t-vs-int
 packet sniffing
 ---------------
 http://www.tcpdump.org/pcap.htm
+
+perfomance with valgrind
+========================
+1) perf
+-------
+$ valgrind --dsymutil=yes --tool=callgrind tests/bstree_tests # to run it
+$ callgrind_annotate callgrind.out.1232 # open the file
+$ callgrind_annotate callgrind.out.6286 src/lcthw/bstree.c # to annotate the source file
+and then proceed down to where the bottleneck is...
+
+2) mem
+------
+$ valgrind --tool=cachegrind tests/bstree_tests
+$ cg_annotate --show=Dr,Dw cachegrind.out.1316 # show mem read/write
+$ cg_annotate --show=Dr,Dw cachegrind.out.1316 /vagrant/programs/zeds/liblcthw/src/lcthw/bstree.c # for source level
+
+
+
+
+
+
+
+
+
+
+
+
+
+
