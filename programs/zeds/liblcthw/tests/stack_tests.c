@@ -17,7 +17,6 @@ char *test_push_pop() {
     int i = 0;
     for (i = 0; i < NUM_TESTS; i++) {
         Stack_push(stack, tests[i]);
-        printf("%s\n", tests[i]);
         mu_assert(Stack_peek(stack) == tests[i], "wrong next val");
     }
 
