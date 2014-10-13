@@ -442,9 +442,13 @@ $ cg_annotate --show=Dr,Dw cachegrind.out.1316 # show mem read/write
 $ cg_annotate --show=Dr,Dw cachegrind.out.1316 /vagrant/programs/zeds/liblcthw/src/lcthw/bstree.c # for source level
 
 
+CPP in python
+-------------
+http://cpip.sourceforge.net/
 
-
-
+carmack on inlined code
+-----------------------
+http://number-none.com/blow/john_carmack_on_inlined_code.html
 
 
 
