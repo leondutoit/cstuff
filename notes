@@ -456,5 +456,20 @@ http://en.wikipedia.org/wiki/Circular_buffer
 
 
 
+undefined behaviour
+-------------------
+http://blog.llvm.org/2011/05/what-every-c-programmer-should-know.html#
 
 
+
+llvm - mapping c level concepts to IR
+-------------------------------------
+http://llvm.lyngvig.org/Articles/Mapping-High-Level-Constructs-to-LLVM-IR#
+
+
+
+http://www.tedunangst.com/flak/post/memcpy-vs-memmove
+
+implementing mem management
+---------------------------
+http://danluu.com/malloc-tutorial/
